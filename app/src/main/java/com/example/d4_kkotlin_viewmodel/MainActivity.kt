@@ -6,9 +6,8 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
 
-//view model will help to prevent rerendring
+// The viewModel instance, along with SavedStateHandle, helps to preserve the progress state during configuration changes like screen rotation
 class MainActivity : AppCompatActivity() {
-    var count = 0
     private lateinit var viewModel:MainActivityViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
