@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 
 // The viewModel instance, along with SavedStateHandle, helps to preserve the progress state during configuration changes like screen rotation
@@ -17,7 +18,10 @@ class MainActivity : AppCompatActivity() {
         val tv = findViewById<TextView>(R.id.tvCount)
         val btn = findViewById<Button>(R.id.button)
 
-        tv.text = viewModel.count.toString()
+//        tv.text = viewModel.count.toString()
+        viewModel.count.observe(this, Observer {
+            tv.text = it.toString()
+        })
 
         btn.setOnClickListener{
             viewModel.updateCount()
