@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
 
         btn.setOnClickListener{
             viewModel.updateCount()
-            tv.text = viewModel.count.toString()//get the count value in the view model
+//            tv.text = viewModel.count.toString()//get the count value in the view model
         }
 
     }
